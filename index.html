@@ -1,0 +1,1277 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Micro-seminar JavaScript</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="img/background.png" class="center">
+          <h1 class="center">Rapid Prototyping Using Web-based Technologies</h1>
+          Nicolas Hili
+        </section>
+
+        <section data-background="img/background.png">
+          <h3>Let's start with a joke...</h3>
+          <img src="img/javascript-is-good.png" alt="JavaScript is Good" style="width:600px;" />
+        </section>
+
+        <section data-background="img/background.png">
+          <h3>Objective of this Presentation</h3>
+          <div style="float:left;width:52%;position:relative;margin-left:2%;font-size:70%;">
+            <div class="fragment fade-in" data-fragment-index="0">
+            <img src="img/villager-red.png" style=""/>
+            <h6 style="" class="" data-fragment-index="2">YOU: &ldquo;Long life to strongly typed languages!&rdquo;</h6>
+            </div>
+            <div class="fragment fade-in" data-fragment-index="2">
+            <i class="down"></i><br />
+            <img class="" src="img/villager-blue.png" style="" data-fragment-index="2"/>
+            <h6 style="" class="" data-fragment-index="2">YOU: &ldquo;Master JavaScript, guide us. Master JavaScript, teach us!&rdquo;</h6>
+            </div>
+          </div>
+          <div style="float:right;width:40%;margin-right:2%;" class="fragment" data-fragment-index="1">
+            <img src="img/wololo.png"/>
+            <h4>ME: &ldquo;WOLOLO!&rdquo;</h4>
+          </div>
+        </section>
+
+
+        <section data-background="img/background.png" class="center">
+          <h2 style="margin:auto;text-align:center;">Outline</h2>
+          <ol>
+            <li>Short Introduction</li>
+            <li>Examples</li>
+            <li>
+              Libraries
+              <ul><li>Common libraries</li></ul>
+            </li>
+          </ol>
+        </section>
+
+        <section data-background="img/background.png" class="center">
+          <h1>Short Introduction</h1>
+        </section>
+
+            
+        <section data-background="img/background.png">
+          <h2>JavaScript for Dummies</h2>
+          <ul>
+            <li class="fragment fade-in">For some, JavaScript is:
+              <ul class="fragment fade-in" style="font-size:80%;">
+                <li>God's mistake</li>
+                <li>Bad patterns: Callback hell</li>
+                <li>Desperately slow and inefficient</li>
+              </ul>
+            </li>
+            <li class="fragment fade-in" style="margin-top:25px;">For others, JavaScript is:
+              <ul class="fragment fade-in" style="font-size:80%;">
+                <li>A powerful UI-centered programming language</li>
+                <li>A rich library of APIs and UI components</li>
+                <li>A fast way to prototype</li>
+                <li>A language that kicks Eclipse and SWT fanboys' ass</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+				<section data-background="img/background.png">
+          <h2>The 7 Steps to Love JavaScript</h2>
+          <ol style="font-size:45%;" class="rounded-list">
+            <li class="fragment fade-in"><a href="#">Start a project involving UI development</a></li>
+            <li class="fragment fade-in"><a href="#">Start the UI layer in GTK</a></li>
+            <li class="fragment fade-in"><a href="#">Fail</a></li>
+            <li class="fragment fade-in"><a href="#">Think of a better solution. Try Eclipse/SWT</a></li>
+            <li class="fragment fade-in"><a href="#">Fail again</a></li>
+            <li class="fragment fade-in"><a href="#">Learn JavaScript</a></li>
+            <li class="fragment fade-in"><a href="#">Done.</a></li>
+          </ol>
+				</section>
+
+				<section data-background="img/background.png">
+          <h2>This begs a question...</h2>
+          <blockquote>
+            &ldquo;And if I don't do UI, should I still use JavaScript?&rdquo;
+          </blockquote>
+          <div class="fragment fade-in" data-fragment-index="1">
+            <i class="down"></i><br />
+            <blockquote>
+              &ldquo;It depends. But we'll come to it later&rdquo;
+            </blockquote>
+          </div>
+        </section>
+
+				<section data-background="img/background.png">
+          <h2>JavaScript, What Else?</h2>
+
+          <ul>
+            <li>The winning triplet:
+              <ul>
+                <li>HTML <small>(Structure)</small></li>
+                <li>CSS <small>(Presentation)</small></li>
+                <li>JavaScript <small>(Interaction)</small></li>
+              </ul>
+            </li>
+            <li style="margin-top:25px;">Without forgetting:
+              <ul>
+                <li>SVG <small>(Vectorial)</small></li>
+                <li>Canvas <small>(Bitmap)</small></li>
+                <li>JSON <small>(Data)</small></li>
+              </ul>
+            </li>
+          </ul>
+				</section>
+
+				<section data-background="img/background.png">
+          <h2>JavaScript is Omnipresent</h2>
+          <ul style="font-size:90%;">
+            <li>This presentation is made of HTML5, CSS, and JavaScript</li>
+            <li>JavaScript is no longer reserved for Web developers only.<br /><br />It can be used for:
+              <ul>
+                <li>browser-side applications</li>
+                <li>server-side applications (NodeJS)</li>
+                <li>desktop applications (NodeJS)</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-background="img/background.png">
+          <h2>Four possible patterns</h2>
+          <div style="position: relative">
+            <div style="float:left; width:49%;height:280px;vertical-align:bottom;" class="fragment fade-in">
+              <h6 style="font-size:smaller;">#1: JavaScript into the Browser</h6>
+              <embed src="svg/pattern-2.svg" />
+            </div>
+            <div style="float:left; width:49%;height:280px;vertical-align:bottom;" class="fragment fade-in">
+              <h6 style="font-size:smaller;">#2: JavaScript as Desktop Application</h6>
+              <embed src="svg/pattern-3.svg" />
+            </div>
+            <div style="float:left; width:49%;height:280px;vertical-align:bottom;" class="fragment fade-in">
+              <h6 style="font-size:smaller;">#3: Mixed server (NodeJS) + browser</h6>
+              <embed src="svg/pattern-1.svg" />
+            </div>
+            <div style="float:left; width:49%;height:280px;vertical-align:bottom;" class="fragment fade-in">
+              <h6 style="font-size:smaller;">#4: Mixed server (UNIX process) + browser</h6>
+              <embed src="svg/pattern-4.svg" />
+            </div>
+          </div>
+        </section>
+
+        <section data-background="img/background.png">
+          <h2>Frontend and/or Backend?</h2>
+          <p>For most of the cases, JavaScript frontend is enough.</p>
+          <p>Some cases it is not:</p>
+          <ul>
+            <li>Writing and loading files on the user's computer<small>(*)</small></li>
+            <li>Serving files through a minimal web browser<small>(*)</small></li>
+            <li>Calling UNIX processes</li>
+          </ul>
+        </section>
+
+        <section data-background="img/background.png" class="center">
+            <h1>Examples</h1>
+        </section>
+
+        <section data-background="img/background.png">
+          <h2>Code Snippets</h2>
+          <div style="width:36%;float:left;">
+          Desktop
+					<pre><code class="hljs" data-trim contenteditable>
+var connect = 
+  require('connect');
+var serveStatic =
+  require('serve-static');
+
+var app = connect();
+
+app.use(
+  serveStatic(
+    __dirname+"/static/"
+  )
+).listen(8080);
+					</code></pre>
+          </div>
+          <div style="width:63%;float:right;">
+          Browser
+					<pre><code class="hljs" data-trim contenteditable>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  ...
+  &lt;body&gt;
+    Hello World
+    ...
+    &lt;script type="text/javascript"&gt;
+    document.addEventListener("DOMContentLoaded",
+      function(event) {
+        // Your code to run
+      }
+    );
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+					</code></pre>
+          </div>
+
+        </section>
+
+
+
+        <section>
+
+          <section data-background="img/background.png">
+            <h2>Some Examples</h2>
+            <ul>
+              <li>ForePRET</li>
+              <li>TwIRTee simulator</li>
+              <li>VCD analizer</li>
+            </ul>
+          </section>
+
+
+          <section data-background="img/optipret-frontend.png">
+          </section>
+
+          <section data-background="img/twirtee-simulator.png">
+          </section>
+
+          <section data-background="img/background.png">
+            <h2>VCD Analyzer</h2>
+          <div style="width:35%;float:left;">
+            <blockquote style="font-size:50%;width: 95%;margin-left:4%;">
+              In FlexPRET, the success or failure of a <pre style="display: inline;"><code class="hljs" style="display: inline;font-size:100%;">delay_until_period();</code></pre> result in two different patterns in the VCD trace. Those patterns are impossible to detect using VCD analyzers because one cannot write a query in pure combinatory logic (state-based).
+            </blockquote>
+            <div class="fragment">
+            <i class="down"></i><br />
+            <blockquote style="font-size:50%;width: 95%;margin-left:4%;">
+              Solution: write a small state-based program to detect the two patterns (success and fail).
+            </blockquote>
+            </div>
+          </div>
+          <div style="width:63%;float:right;position:relative;">
+					<pre style="position:absolute;" class="fragment fade-left"><code class="hljs" data-trim contenteditable>
+var vcd = require('vcd');
+var fs  = require('fs');
+fs.createReadStream('./multi.vcd')
+  .pipe(vcd.createStream())
+  .on('sample', function (index, changes, last) {
+    // sequential program with state memorization
+    switch(state) {
+      case State.Failure_Pattern_Entering:
+        // ...
+        break;
+      // ...
+    }
+  })
+  .on('finish', function () {
+    console.log("output result");
+  });
+
+					</code></pre>
+					<pre style="position:absolute;" class="fragment fade-left"><code class="hljs" data-trim contenteditable>
+hili@caphca-twirtee:~/caphca/vcd-twirtee$ node index.js 
+{ core_0:
+   { state: 1,
+     fragments: { to: { sleep: 0, wake: 0 }, ts: { sleep: 0, wake: 0 } },
+     fragment: 0,
+     error: 9067048,
+     firstError: 1629,
+     fragmentError: 'to' },
+  core_1:
+   { state: 1,
+     fragments:
+      { td1: { sleep: 0, wake: 0 },
+        to: { sleep: 0, wake: 0 },
+        ts: { sleep: 0, wake: 0 } },
+     fragment: 2,
+     error: 4257494,
+     firstError: 903,
+     fragmentError: 'td1' },
+  core_2:
+   { state: 1,
+     fragments:
+      { td1: { sleep: 0, wake: 0 },
+        to: { sleep: 0, wake: 0 },
+        ts: { sleep: 0, wake: 0 } },
+     fragment: 0,
+     error: 1034688,
+     firstError: 912,
+     fragmentError: 'td1' } }
+          </code></pre>
+          </section>
+
+        </section>
+
+        <section data-background="img/background.png" class="center">
+            <h1>Libraries</h1>
+        </section>
+
+				<section data-background="img/background.png">
+          <h2>JavaScript Allows Reuse</h2>
+          <ul style="font-size:80%;">
+            <li>Rich set of available open source libraries</li>
+            <li>E.g. this presentation is based on <a href="https://github.com/hakimel/reveal.js">Reveal.js</a> (5577 LoCs)</li>
+            <li>Allow for around &#8805; 80% of reuse <small>(source: me)</small></li>
+          </ul>
+
+          <blockquote class="fragment fade-in" data-fragment-index="1">
+          Small quiz: how many lines of JS code for this presentation (excluded libraries)?<br />
+          <ul class="buttons fragment fade-in" data-fragment-index="2">
+            <li class="fragment highlight-blue" data-fragment-index="3"><p>0</p></li>
+            <li><p>&#8804; 100</p></li>
+            <li><p>&#8804; 500</p></li>
+            <li><p>&#8804; 1000</p></li>
+            <li><p>&#62; 1000</p></li>
+          </ul>
+          </blockquote>
+          <p class="fragment fade-in" data-fragment-index="4"> => No need to be a JS guru to do some work</p>
+        </section>
+
+
+        <section data-background="img/background.png">
+          <h3>Where to find libraries?</h3>
+
+          <div style="font-size:smaller;">
+          <h6 style="margin-top:40px;">For web-based development</h6>
+          <ul>
+            <li>Search engines: Qwant / Google</li>
+            <li>Code snippet: <a href="http://codepen.io" target="_blank">http://codepen.io</a></li>
+          </ul>
+          <h6 style="margin-top:40px;">For NodeJS</h6>
+          <ul>
+            <li>NPM: <a href="http://npmjs.com" target="_blank">http://npmjs.com</a>
+              <ul>
+                <li>Package manager for JavaScript</li>
+                <li>&gt; 800,000 packages</li>
+              </ul>
+            </li>
+          </ul>
+          <blockquote style="width:90%;">Interoperability: a lot of JS libraries are well developped to work equally on both NodeJS and as Web application (browserification).</blockquote>
+          </div>
+        </section>
+
+        <section data-background="img/npm.png">
+        </section>
+
+        <section data-background="img/background.png" class="center"> 
+          <h1>Libraries</h1>
+          <h2>Common libraries</h2>
+        </section>
+
+        <section data-background="img/background.png">
+          <h2>Libraries for UI</h2>
+          <ul style="min-width:90%;">
+            <li class="fragment fade-in">Framework HTML+CSS+JS (Frontend)
+
+              <blockquote style="float:right;width:55%;font-size:45%;">
+                <ul class="plus">
+                  <li>Out-of-the-box</li>
+                  <li>Highly customizable</li>
+                  <li>Same output on all browsers (including IE)</li>
+                  <li>Handle presentation, user only cares about content</li>
+                  <li class="minus">Mostly intended for web sites</li>
+                </ul>
+              </blockquote>
+              <ul>
+                <li><a href="https://materializecss.com/">Materialize</a></li>
+                <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+                <li><a href="https://foundation.zurb.com/">Foundation</a></li>
+              </ul>
+
+            </li>
+            <li class="fragment fade-in" style="clear:right;">Eclipse-like apps (Frontend)<br />
+              <blockquote style="float:right;width:55%;font-size:45%;">
+                <ul class="plus">
+                  <li>Window and tab managements</li>
+                  <li>Easy to configure</li>
+                  <li class="plusminus">Require a bit of JS knowledge to work</li>
+                </ul>
+              </blockquote>
+              <ul>
+                <li><a href="https://golden-layout.com/">Golden Layout</a></li>
+                <li>...</li>
+              </ul>
+            </li>
+            <li  class="fragment fade-in" style="clear:right;">Multi-platform apps (Frontend + Backend)<br />
+              <blockquote style="float:right;width:55%;font-size:45%;">
+                <ul class="plus">
+                  <li>Multi-device</li>
+                  <li>Unique API for queering device sensors</li>
+                  <li class="minus">Trickier to configure</li>
+                </ul>
+              </blockquote>
+              <ul>
+                <li><a href="https://cordova.apache.org/">Apache Cordova</a></li>
+                <li>...</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-background="img/background.png">
+          <h2>Libraries for Data visualization <span style="font-size:small;">(non-exhaustive list)</span></h2>
+          <ul style="min-width:90%;">
+            <li class="fragment fade-in">Charts and tables<br />
+              <blockquote style="float:right;width:60%;font-size:45%;">
+                <ul class="plus">
+                  <li>Highly customizable</li>
+                  <li>Large amount of data</li>
+                  <li class="minus">Sometimes tedious to configure (specially ChartJS)</li>
+                </ul>
+              </blockquote>
+              <ul>
+                <li><a href="https://www.chartjs.org/">ChartJS</a></li>
+                <li><a href="https://github.com/mleibman/SlickGrid">SlickGrid</a></li>
+              </ul>
+            </li>
+            <li class="fragment fade-in">Graphs<br />
+              <blockquote style="float:right;width:60%;font-size:45%;">
+                <ul class="plus">
+                  <li>Multitude of possibilities</li>
+                  <li>Highly interactive</li>
+                  <li class="minus">Sometimes tedious to configure</li>
+                </ul>
+              </blockquote>
+              <ul>
+                <li><a href="https://about.draw.io/">draw.io</a></li>
+                <li><a href="http://fabricjs.com/">Fabric.JS</a></li>
+                <li><a href="http://www.graphviz.org/">Graphviz</a></li>
+                <li><a href="https://d3js.org/">D3.js</a></li>
+                <li><a href="http://plantuml.com/">PlantUML</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-background="img/background.png">
+          <h2>Libraries for Code editing & visualization <span style="font-size:small;">(non-exhaustive list)</span></h2>
+          <ul style="min-width:90%;">
+            <li class="fragment fade-in" data-fragment-index=0>Parsing
+              <blockquote style="float:right;width:60%;font-size:45%;">
+                <ul class="plus">
+                  <li>Online editor to test grammars</li>
+                  <li>Can be used to parse and/or evaluate</li>
+                  <li>Can be embedded in a JS editor</li>
+                </ul>
+              </blockquote>
+              <ul>
+                <li><a href="https://pegjs.org/">PEG.js</a></li>
+              </ul>
+            </li>
+            <li class="fragment fade-in" data-fragment-index=1 style="clear:right">Highlighting<br />
+              <blockquote style="float:right;width:60%;font-size:45%;">
+                <ul class="plus">
+                  <li>Large set of programming languages + custom</li>
+                </ul>
+              </blockquote>
+              <ul>
+                <li><a href="https://highlightjs.org/">highlight.js</a></li>
+                <li><a href="https://prismjs.com/">Prism</a></li>
+              </ul>
+            </li>
+            <li class="fragment fade-in" data-fragment-index=2 style="clear:right">Editing<br />
+              <blockquote style="float:right;width:60%;font-size:45%;">
+                <ul class="plus">
+                  <li>Large set of programming languages + custom</li>
+                  <li>Highly configurable</li>
+                  <li>Include highlighting support</li>
+                  <li>Include smart features: code snippet, semantic checking, etc.</li>
+                  <li class="minus">Painful to configure new languages</li>
+                </ul>
+              </blockquote>
+              <ul>
+                <li><a href="https://ace.c9.io/">Ace</a></li>
+                <li><a href="https://github.com/codemirror/CodeMirror">CodeMirror</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-background="img/background.png">
+          <h2>About Highlighting...</h2>
+
+<svg
+   class="fragment fade-in"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="248.70833mm"
+   height="124.35416mm"
+   viewBox="0 0 248.70833 124.35416"
+   version="1.1"
+   id="svg1607"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="mlk.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="195.82052"
+     inkscape:cy="217.72892"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="997"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1" />
+  <defs
+     id="defs1601" />
+  <metadata
+     id="metadata1604">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(18.520824,-34.495541)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <image
+       width="248.70833"
+       height="124.35416"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeSpeed"
+       xlink:href="img/mlk.png"
+       id="image2160"
+       x="-18.520824"
+       y="34.495541" />
+    <rect
+       y="54.907261"
+       x="5.051394"
+       height="38.914444"
+       width="72.590401"
+       id="rect2163"
+       style="fill:#131313;fill-opacity:1;stroke:none;stroke-width:0.65799999;stroke-miterlimit:4;stroke-dasharray:0.65799999, 0.65799999;stroke-dashoffset:0" />
+    <text
+       id="text2167"
+       y="54.907261"
+       x="5.0513945"
+       style="font-style:normal;font-weight:normal;font-size:12.69999981px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#808000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:GentiumAlt;-inkscape-font-specification:'GentiumAlt Italic';fill:#808000;stroke-width:0.26458332"
+         y="54.907261"
+         x="5.0513945"
+         id="tspan2165"
+         sodipodi:role="line">I have a dream...</tspan></text>
+    <text
+       inkscape:label="#text2167-9"
+       id="ms-word"
+       class="fragment fade-right"
+       y="73.212555"
+       x="0.96222633"
+       style="font-style:normal;font-weight:normal;font-size:12.69999981px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#808000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.25;font-family:GentiumAlt;-inkscape-font-specification:'GentiumAlt Italic';fill:#808000;stroke-width:0.26458332"
+         y="73.212555"
+         x="0.96222633"
+         id="tspan2165-8"
+         sodipodi:role="line">... I wish MS Word</tspan><tspan
+         id="tspan2187"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.25;font-family:GentiumAlt;-inkscape-font-specification:'GentiumAlt Italic';fill:#808000;stroke-width:0.26458332"
+         y="85.912552"
+         x="0.96222633"
+         sodipodi:role="line">could do that</tspan></text>
+    <text
+       id="text2191"
+       y="97.20179"
+       x="26.722923"
+       style="font-style:normal;font-weight:normal;font-size:6.3499999px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Bold';fill:#999999;stroke-width:0.26458332"
+         y="97.20179"
+         x="26.722923"
+         id="tspan2189"
+         sodipodi:role="line">Martin Luther King</tspan></text>
+  </g>
+</svg>
+        </section>
+
+				<section data-background="img/background.png">
+          <h2>Try it!</h2>
+          <div class="codePenContainer" style="height: 400px; width: 60%;float:right;">
+<p class="codepen" data-height="400" data-theme-id="dark" data-default-tab="js,result" data-user="themakshter" data-slug-hash="VpPGzv" style="height: 334px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Chart.js Radar Chart example">
+  <span>See the Pen <a href="https://codepen.io/themakshter/pen/VpPGzv/">
+  Chart.js Radar Chart example</a> by themakshter (<a href="https://codepen.io/themakshter">@themakshter</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+	</div>
+          <ul>
+            <li>Sandboxes
+              <ul>
+                <li><a href="https://blog.codepen.io">CodePen</a></li>
+                <li><a href="https://jsfiddle.net/">JSFiddle</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+
+				<section data-background="img/background.png">
+          <h3>Conclusion</h3>
+          <blockquote style="font-size:smaller;width:90%;">
+            &ldquo;And if I don't do UI, should I still use JavaScript?&rdquo;
+          </blockquote>
+<svg
+   class="fragment fade-in"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="709.18896pt"
+   height="226.33218pt"
+   viewBox="0 0 709.24628 226.29938"
+   version="1.1"
+   id="svg221"
+   sodipodi:docname="graph.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata227">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs225" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="997"
+     id="namedview223"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.7770522"
+     inkscape:cx="555.73561"
+     inkscape:cy="92.189212"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg221" />
+  <g
+     style="stroke-width:1.46329331"
+     class="node"
+     id="node1"
+     transform="matrix(0.68362539,0,0,0.6831547,177.71601,225.95397)">
+    <title
+       id="title6">n1</title>
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="ellipse8"
+       ry="29.331499"
+       rx="58.141499"
+       cy="-274.14819"
+       cx="58.320499" />
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text10"
+       font-size="14.00"
+       y="-278.34821"
+       x="58.320499">Does it</text>
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text12"
+       font-size="14.00"
+       y="-261.54819"
+       x="58.320499">involve UI?</text>
+  </g>
+  <g
+     style="stroke-width:1.46329331"
+     class="node"
+     id="node2"
+     transform="matrix(0.68362539,0,0,0.6831547,178.87019,225.95397)">
+    <title
+       id="title15">n2</title>
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="ellipse17"
+       ry="29.331499"
+       rx="65.409798"
+       cy="-229.14819"
+       cx="235.3455" />
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text19"
+       font-size="14.00"
+       y="-233.34821"
+       x="235.3455">Do you know</text>
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text21"
+       font-size="14.00"
+       y="-216.5482"
+       x="235.3455">JavaScript?</text>
+  </g>
+  <g
+     style="stroke-width:1.46329331"
+     class="edge"
+     id="edge4"
+     transform="matrix(0.68362539,0,0,0.6831547,177.71601,225.95397)">
+    <title
+       id="title24">n1-&gt;n2</title>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       inkscape:connector-curvature="0"
+       id="path26"
+       d="m 110.4764,-260.8901 c 18.1515,4.6141 38.772,9.8559 57.9517,14.7314" />
+    <polygon
+       style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+       id="polygon28"
+       points="169.4764,-249.5037 178.3059,-243.6478 167.7518,-242.7194 " />
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text30"
+       font-size="14.00"
+       y="-258.34821"
+       x="143.3909">no</text>
+  </g>
+  <g
+     style="stroke-width:1.46329331"
+     class="node"
+     id="node9"
+     transform="matrix(0.68362539,0,0,0.6831547,-276.45466,225.95397)">
+    <title
+       id="title33">n9</title>
+    <polygon
+       style="fill:#00ff00;stroke:#000000;stroke-width:1.46329331"
+       id="polygon35"
+       points="1272.7833,-243.6216 1193.8365,-243.6216 1193.8365,-164.6748 1272.7833,-164.6748 " />
+    <polyline
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="polyline37"
+       points="1205.8365,-243.6216 1193.8365,-231.6216 " />
+    <polyline
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="polyline39"
+       points="1193.8365,-176.6748 1205.8365,-164.6748 " />
+    <polyline
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="polyline41"
+       points="1260.7833,-164.6748 1272.7833,-176.6748 " />
+    <polyline
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="polyline43"
+       points="1272.7833,-231.6216 1260.7833,-243.6216 " />
+    <text
+       style="font-weight:bold;font-size:14px;font-family:Times, serif;text-anchor:start;fill:#000000;stroke-width:1.46329331"
+       id="text45"
+       font-size="14.00"
+       font-weight="bold"
+       y="-206.5482"
+       x="1205.3197">Dude, use</text>
+    <text
+       style="font-weight:bold;font-size:14px;font-family:Times, serif;text-anchor:start;fill:#000000;stroke-width:1.46329331"
+       id="text47"
+       font-size="14.00"
+       font-weight="bold"
+       y="-192.5482"
+       x="1201.8232">JavaScript!</text>
+  </g>
+  <path
+     d="m 249.32273,25.977097 c 9.28432,-8.721632 22.57265,-18.7338778 34.64971,-18.7338778 0,0 0,0 209.29339,0 15.5479,0 30.68043,25.6484968 40.838,47.7622138"
+     id="path52"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.99999994" />
+  <polygon
+     points="1193.6184,-243.4206 1183.7497,-247.2754 1188.3076,-252.5882 "
+     id="polygon54"
+     style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+     transform="matrix(0.68362539,0,0,0.6831547,-276.45466,225.95397)" />
+  <text
+     x="400.05179"
+     y="4.3754725"
+     font-size="14.00"
+     id="text56"
+     style="font-size:9.56746006px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:0.99999994"
+     transform="scale(1.0003445,0.99965562)">yes</text>
+  <g
+     style="stroke-width:1.46329331"
+     class="node"
+     id="node3"
+     transform="matrix(0.68362539,0,0,0.6831547,-241.58695,225.95397)">
+    <title
+       id="title59">n3</title>
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="ellipse61"
+       ry="41.091099"
+       rx="89.855202"
+       cy="-114.1482"
+       cx="443.97769" />
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text63"
+       font-size="14.00"
+       y="-126.7482"
+       x="443.97769">Is there already</text>
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text65"
+       font-size="14.00"
+       y="-109.9482"
+       x="443.97769">a JavaScript library</text>
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text67"
+       font-size="14.00"
+       y="-93.148201"
+       x="443.97769">for what you need?</text>
+  </g>
+  <path
+     d="M 295.707,73.588551 C 238.30762,78.99933 160.77335,85.856577 105.01639,121.51005"
+     id="path72"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.99999994"
+     sodipodi:nodetypes="cc" />
+  <polygon
+     points="375.6864,-147.7946 379.0655,-153.925 386.1336,-146.0324 "
+     id="polygon74"
+     style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+     transform="matrix(-0.25450914,0.63403629,-0.63448264,-0.25435972,106.30632,-157.11164)" />
+  <text
+     x="188.08954"
+     y="84.747948"
+     font-size="14.00"
+     id="text76"
+     style="font-size:9.56746006px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:0.99999994"
+     transform="scale(1.0003445,0.99965562)">no</text>
+  <path
+     d="m 384.08611,69.410299 c 6.91897,0 16.03754,0 24.11143,0 0,0 0,0 98.6747,0 8.82984,0 18.84933,5.70523 25.73364,10.520719"
+     id="path81"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.99999994" />
+  <polygon
+     points="1183.0164,-210.2768 1184.2302,-217.1707 1193.4718,-211.9898 "
+     id="polygon83"
+     style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+     transform="matrix(0.68362539,0,0,0.6831547,-276.45466,225.95397)" />
+  <text
+     x="447.3902"
+     y="66.563965"
+     font-size="14.00"
+     id="text85"
+     style="font-size:9.56746006px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:0.99999994"
+     transform="scale(1.0003445,0.99965562)">yes</text>
+  <g
+     style="stroke-width:1.46329331"
+     class="node"
+     id="node4"
+     transform="matrix(0.68362539,0,0,0.6831547,-260.94819,225.95397)">
+    <title
+       id="title88">n4</title>
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="ellipse90"
+       ry="29.331499"
+       rx="49.545601"
+       cy="-71.148201"
+       cx="636.92798" />
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text92"
+       font-size="14.00"
+       y="-75.348198"
+       x="636.92798">Have you</text>
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text94"
+       font-size="14.00"
+       y="-58.548199"
+       x="636.92798">checked?</text>
+  </g>
+  <path
+     d="m 78.614597,174.86019 c 12.187194,7.41489 26.493353,14.6329 40.686583,18.4063 7.56999,2.01252 15.75271,1.70741 23.5217,0.28065"
+     id="path99"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.99999994" />
+  <polygon
+     points="587.1239,-48.5324 585.5803,-55.3601 596.1059,-54.1514 "
+     id="polygon101"
+     style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+     transform="matrix(0.68362539,0,0,0.6831547,-257.99529,229.02841)" />
+  <text
+     x="125.23978"
+     y="190.59952"
+     font-size="14.00"
+     id="text103"
+     style="font-size:9.56746006px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:0.99999994"
+     transform="scale(1.0003445,0.99965562)">no</text>
+  <path
+     d="m 112.40809,132.00476 c 22.44289,-6.29007 49.82474,-12.04101 74.92227,-12.04101 0,0 0,0 248.66025,0 33.82346,0 71.30014,-11.15988 96.93527,-20.592328"
+     id="path108"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.99999994" />
+  <polygon
+     points="1193.5941,-188.6443 1185.2989,-182.0535 1182.9993,-188.665 "
+     id="polygon110"
+     style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+     transform="matrix(0.68362539,0,0,0.6831547,-276.45466,225.95397)" />
+  <text
+     x="277.05359"
+     y="117.13483"
+     font-size="14.00"
+     id="text112"
+     style="font-size:9.56746006px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:0.99999994"
+     transform="scale(1.0003445,0.99965562)">yes</text>
+  <path
+     d="m 140.53181,175.04449 c -6.92933,-2.55076 -15.01219,-5.52618 -22.97468,-8.45724"
+     id="path117"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.99999994" />
+  <polygon
+     points="524.9673,-96.0993 535.4892,-97.3402 533.9666,-90.5078 "
+     id="polygon119"
+     style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+     transform="matrix(0.66516285,0.15769524,-0.1578039,0.66470486,-251.27938,145.40783)" />
+  <text
+     x="135.05446"
+     y="166.99796"
+     font-size="14.00"
+     id="text121"
+     style="font-size:9.56746006px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:0.99999994"
+     transform="scale(1.0003445,0.99965562)">no</text>
+  <g
+     style="stroke-width:1.46329331"
+     class="node"
+     id="node5"
+     transform="matrix(0.68362539,0,0,0.6831547,-269.27602,225.95397)">
+    <title
+       id="title124">n5</title>
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="ellipse126"
+       ry="18"
+       rx="65.391701"
+       cy="-61.148201"
+       cx="809.8056" />
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text128"
+       font-size="14.00"
+       y="-56.9482"
+       x="809.8056">Are you sure?</text>
+  </g>
+  <path
+     d="m 208.89193,179.3064 c 7.36195,0.60404 15.6367,1.28296 23.61883,1.9379"
+     id="path133"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.99999994" />
+  <polygon
+     points="735.9458,-68.9266 745.727,-64.8548 735.5415,-61.9382 "
+     id="polygon135"
+     style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+     transform="matrix(0.68362539,0,0,0.6831547,-270.30154,225.95397)" />
+  <text
+     x="222.87852"
+     y="177.95654"
+     font-size="14.00"
+     id="text137"
+     style="font-size:9.56746006px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:0.99999994"
+     transform="scale(1.0003445,0.99965562)">yes</text>
+  <path
+     d="m 258.38117,195.38266 c -28.98859,15.81941 -86.22566,41.13221 -133.27065,25.55136 -25.578803,-8.47146 -49.903836,-26.4868 -67.926871,-42.49537"
+     id="path142"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.99999994" />
+  <polygon
+     points="490.2683,-72.2594 485.5629,-67.0768 480.5119,-76.3902 "
+     id="polygon144"
+     style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+     transform="matrix(0.68362539,0,0,0.6831547,-272.35258,229.02841)" />
+  <text
+     x="158.91075"
+     y="218.27657"
+     font-size="14.00"
+     id="text146"
+     style="font-size:9.56746006px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:0.99999994"
+     transform="scale(1.0003445,0.99965562)">no</text>
+  <g
+     style="stroke-width:1.46329331"
+     class="node"
+     id="node6"
+     transform="matrix(0.68362539,0,0,0.6831547,-276.45466,225.95397)">
+    <title
+       id="title149">n6</title>
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="ellipse151"
+       ry="29.331499"
+       rx="97.218498"
+       cy="-61.148201"
+       cx="1030.5195" />
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text153"
+       font-size="14.00"
+       y="-65.348198"
+       x="1030.5195">Do you want to</text>
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text155"
+       font-size="14.00"
+       y="-48.548199"
+       x="1030.5195">learn something fun?</text>
+  </g>
+  <path
+     d="m 329.30943,184.18029 c 7.92709,0 16.56476,0 25.16021,0"
+     id="path160"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:0.99999994" />
+  <polygon
+     points="923.0492,-57.6483 923.0492,-64.6483 933.0492,-61.1482 "
+     id="polygon162"
+     style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+     transform="matrix(0.68362539,0,0,0.6831547,-276.45466,225.95397)" />
+  <text
+     x="341.48022"
+     y="181.3735"
+     font-size="14.00"
+     id="text164"
+     style="font-size:9.56746006px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:0.99999994"
+     transform="scale(1.0003445,0.99965562)">yes</text>
+  <g
+     style="stroke-width:1.46329331"
+     class="node"
+     id="node7"
+     transform="matrix(0.68362539,0,0,0.6831547,-276.45466,225.95397)">
+    <title
+       id="title167">n7</title>
+    <polygon
+       style="fill:#ffff00;stroke:#000000;stroke-width:1.46329331"
+       id="polygon169"
+       points="1280.3552,-103.1935 1186.2646,-103.1935 1186.2646,-9.1029 1280.3552,-9.1029 " />
+    <polyline
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="polyline171"
+       points="1198.2646,-103.1935 1186.2646,-91.1935 " />
+    <polyline
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="polyline173"
+       points="1186.2646,-21.1029 1198.2646,-9.1029 " />
+    <polyline
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="polyline175"
+       points="1268.3552,-9.1029 1280.3552,-21.1029 " />
+    <polyline
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       id="polyline177"
+       points="1280.3552,-91.1935 1268.3552,-103.1935 " />
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text179"
+       font-size="14.00"
+       y="-68.748199"
+       x="1233.3099">Alright then...</text>
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text181"
+       font-size="14.00"
+       y="-51.9482"
+       x="1233.3099">do not use</text>
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text183"
+       font-size="14.00"
+       y="-35.148201"
+       x="1233.3099">JavaScript</text>
+  </g>
+  <g
+     style="stroke-width:1.46329331"
+     class="edge"
+     id="edge12"
+     transform="matrix(0.68362539,0,0,0.6831547,-276.45466,225.95397)">
+    <title
+       id="title186">n6-&gt;n7</title>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       inkscape:connector-curvature="0"
+       id="path188"
+       d="m 1124.0555,-52.8219 c 14.7106,0.6336 29.7538,0.8875 43.9823,0.4737 2.6735,-0.0778 5.4078,-0.1734 8.169,-0.283" />
+    <polygon
+       style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+       id="polygon190"
+       points="1176.1162,-56.1306 1186.2629,-53.0818 1176.4297,-49.1376 " />
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text192"
+       font-size="14.00"
+       y="-56.348202"
+       x="1156.9583">no</text>
+  </g>
+  <g
+     style="stroke-width:1.46329331"
+     class="edge"
+     id="edge11"
+     transform="matrix(0.68362539,0,0,0.6831547,-276.45466,225.95397)">
+    <title
+       id="title195">n6-&gt;n9</title>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.46329331"
+       inkscape:connector-curvature="0"
+       id="path197"
+       d="m 1107.5659,-79.3833 c 20.9644,-7.3523 42.7517,-17.4038 60.4719,-30.9649 15.8192,-12.1063 29.2703,-29.1454 39.7773,-45.3856" />
+    <polygon
+       style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+       id="polygon199"
+       points="1205.0961,-157.9898 1213.3459,-164.6376 1211.0424,-154.2962 " />
+    <text
+       style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331"
+       id="text201"
+       font-size="14.00"
+       y="-114.3482"
+       x="1156.9583">yes</text>
+  </g>
+  <g
+     style="stroke-width:1.46329331"
+     id="uml-rt"
+     class="fragment fade-in"
+     inkscape:label="#g1191"
+     transform="matrix(0.68362539,0,0,0.6831547,0.15835499,0.00105124)">
+    <g
+       style="stroke-width:1.46329331"
+       transform="translate(-404.6266,330.74927)"
+       id="node8"
+       class="node">
+      <title
+         id="title204">n8</title>
+      <ellipse
+         cx="1375.3937"
+         cy="-56.148201"
+         rx="65.747589"
+         ry="29.331499"
+         id="ellipse206"
+         style="fill:#00ffff;stroke:#000000;stroke-width:1.46329331" />
+      <text
+         x="1374.8892"
+         y="-60.348202"
+         font-size="14.00"
+         id="text208"
+         style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331">let's talk about</text>
+      <text
+         x="1374.8892"
+         y="-43.548199"
+         font-size="14.00"
+         id="text210"
+         style="font-size:14px;font-family:Times, serif;text-anchor:middle;fill:#000000;stroke-width:1.46329331">UML-RT instead</text>
+    </g>
+    <g
+       style="stroke-width:1.46329331"
+       transform="translate(-404.6266,330.74927)"
+       id="edge13"
+       class="edge">
+      <title
+         id="title213">n7-&gt;n8</title>
+      <path
+         d="m 1280.757,-56.1482 c 8.4777,0 17.5585,0 26.7719,0"
+         id="path215"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:1.46329331" />
+      <polygon
+         points="1317.556,-56.1482 1307.556,-52.6483 1307.5561,-59.6483 "
+         id="polygon217"
+         style="fill:#000000;stroke:#000000;stroke-width:1.46329331"
+         transform="translate(-10.209567)" />
+    </g>
+  </g>
+</svg>
+
+        </section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        center: false,
+
+        pdfSeparateFragments: false,
+        pdfMaxPagesPerSlide: 1,
+
+        // Transition style
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+        backgroundTransition: 'zoom',
+        
+				dependencies: [
+          // Zoom in and out with Alt+click
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
